@@ -5,7 +5,7 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#eee",
     "navigationBarTitleText": "途牛旅游",
     "navigationBarTextStyle":"black"
   }
