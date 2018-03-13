@@ -1,39 +1,70 @@
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    /**
+         * sessionId
+         * isLogin
+         * pageTo 授权后跳转页面 
+         * pageToFlag 授权后跳转页面标志 order->预定页 order-list->订单页
+         * phone
+         * realName
+         * touristList 常旅
+         * customer从常旅中选择的取票人信息包括手机,姓名,证件号,证件类型
+         * tourists出游人
+         * psptType 取票人的证件类型
+         */
+    let timestampNow = Date.parse(new Date);
+    let timestampExpiresOld = wx.getStorageSync('timestampExpires');
+    if(!timestampExpiresOld || timestampNow > timestampExpiresOld){
+      wx.setStorageSync('sessionId','');
+      wx.setStorageSync('isLogin',false);
+      wx.setStorageSync('sessionKey','');
+      wx.setStorageSync('loginKey','');
+      let timestampExpiresNew = timestampNow + 5 * 24 * 60 * 60 * 1000; //5天  
+      wx.setStorageSync('timetampExpires',timestampExpiresNew);
+    }
+    wx.setStorageSync('authFlag',0 ); 
+    wx.setStorageSync('pageTo','');
+    wx.setStorageSync('pageToFlag','');
+    wx.setStorageSync('phone','');
+    wx.setStorageSync('loginPhone','');
+    wx.setStorageSync('realName','');
+    wx.setStorageSync('touristList',[]);
+    wx.setStorageSync('customer',{});
+    wx.setStorageSync('tourists',[]);
+    wx.setStorageSync('psptInfoSelect',[]);
+    wx.setStorageSync('psptType',null );
+    wx.setStorageSync('availableCredentials',[]);
+    wx.setStorageSync('TICKET_SELECTED_DES','');
+    this.getSystemInfo();
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
+  },
+  onShow:function(){
+    console.log('---onShow---');
+  },
+  onHide:function(){
+    console.log('---onHide---');
+  },
+  component:function(fileName){
+    return require('/components/' + fileName);
+  },
+  module:function(fileName){
+    return require('/pages/modules/' + fileName +'_modules.js');
+  },
+  getSystemInfo(){
+    let that=this;
+    wx.getSystemInfo({
+      success: function(res) {
+        that.globalData.windowHeight=res.windowHeight+'px';
       }
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    windowHeight:0,
+    orderInfo:{
+      planDate:'',
+      price:0
+    }
   }
 })

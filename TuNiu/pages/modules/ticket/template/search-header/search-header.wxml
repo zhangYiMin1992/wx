@@ -1,0 +1,8 @@
+<template name="header">
+  <view class='search-layout'>
+    <view class='des-city'>
+      <text>上海</text>
+      <text></text>
+    </view>
+  </view>
+</template>

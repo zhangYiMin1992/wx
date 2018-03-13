@@ -1,12 +1,12 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/modules/ticket/index/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#eee",
-    "navigationBarTitleText": "途牛旅游",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#23cc77",
+    "navigationBarTitleText": "景点门票",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":false
   }
 }

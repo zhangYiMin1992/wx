@@ -1,0 +1,61 @@
+<!--pages/modules/ticket/index/index.wxml-->
+<view>
+<!-- 顶部搜索部分 -->
+  <view class='search-layout'>
+    <view class='des-city'>
+      <text class='des-city-text'>上海</text>
+      <text class='des-city-dwn'></text>
+    </view>
+    <view class='search'>
+      <icon type="search" class='search-icon' size="16"></icon>
+      <view class='sch-v'>
+        <input class="search-input" placeholder='搜索目的地/主题/关键字' placeholder-style='color:#ccc; line-height:60rpx;'></input>
+        <view></view>
+      </view>
+    </view> 
+  </view>
+  <!-- 主体列表部分 -->
+  <scroll-view class='scroll-view' style='height:{{listHeight}}px;'>
+    <view class='scroll-container'>
+      <view class='scroll-li'>
+        <image class='scroll-img' src='' mode='scaleToFill'></image>
+        <view class='scroll-des'>
+          <view class='scenic-title ellips'>
+            <text>上海迪士尼乐园</text>
+          </view>
+          <view class='search-des-middle'>
+            <view class="search-des-wrapper">
+              <view class='sch-lables'>
+                <text class="search-des-lable">今日可订</text>
+              </view>
+              <view class='search-des-comt'>
+                <text>1.7万人点评</text>
+                <text class='search-des-sat'>98%</text>
+                <text>满意</text>
+              </view> 
+            </view>
+            <view class='search-des-price'>
+              <text class="search-des-symbol">¥</text>
+              <text class="search-des-amount">500</text>
+              <text>起</text>
+            </view>       
+          </view>
+          <view class='search-des-footer'>
+            <view class='search-des-city gray-color'>
+              <text>上海</text>
+            </view>
+          </view>  
+        </view>  
+      </view> 
+    </view>
+  </scroll-view>
+  <!-- 页面底部 -->
+  <view class='footer'>
+    <view class='licom'>
+      <text>景点门票</text>
+    </view>
+    <view class='licom'>
+      <text>我的订单</text>
+    </view>
+  </view>
+</view>

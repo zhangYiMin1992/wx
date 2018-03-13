@@ -1,0 +1,157 @@
+/* pages/modules/ticket/index/index.wxss */
+/* 头部 */
+.search-layout{
+  padding: 20rpx 30rpx;
+  background:#f3f2f5;
+  display: flex;
+  align-items: center;
+}
+.des-city{
+  font-size: 16px;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-right:20rpx;
+}
+.des-city-text{
+  padding-right: 8rpx;
+}
+.des-city-dwn{
+  border-right:1px solid #999;
+  border-bottom: 1px solid #999;
+  display: inline-block;
+  width: 16rpx;
+  height: 16rpx;
+  transform: rotate(45deg);
+  transform-origin:100% center;
+}
+.search{
+  flex:1;
+  background:#fff;
+  border:1px solid We8e8e8;
+  border-radius: 4rpx;
+  display: flex;
+  align-items: center;
+}
+.sch-v{
+  flex:1;
+  position: relative;
+}
+.sch-v wx-view{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.search-icon{
+  padding-left:10rpx;
+  padding-right:6rpx;
+}
+.search-input{
+  font-size: 12px;
+  flex: 1;
+  height: 60rpx;
+}
+/* 主体列表部分 */
+.scroll-view{
+  margin-bottom: 88rpx;
+  background:#fff;
+}
+.scroll-container{
+  padding: 0 30rpx;
+}
+.scroll-li{
+  border-bottom: 1px solid #e4e4e4;
+  padding: 20rpx 0;
+  display: flex;
+  overflow: hidden;
+}
+.scroll-img{
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 30rpx;
+  background:pink;
+  flex-shrink:0
+}
+.scroll-des{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 71%;
+}
+.scenic-title{
+  font-size: 14px;
+  color:#051b28;
+  font-weight: bold;
+}
+.search-des-middle{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: space-between;
+}
+.search-des-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.sch-lables{
+  display: flex;
+  flex-direction: row;
+  border:0;
+}
+.search-des-lable{
+  color:#f50;
+  border:1px solid #f80;
+  font-size: 12px;
+  margin-right: 3px;
+  padding: 0 3px;
+}
+.search-des-comt{
+  color:#666;
+  font-size: 12px;
+}
+.search-des-sat{
+  padding-left:16rpx;
+  color:#f80 !important;
+}
+.search-des-price{
+    color:#666;
+    font-size:12px;
+    padding-top:20rpx;
+}
+.search-des-symbol{
+    color:#f80;
+}
+.search-des-amount{
+    color:#f80;
+    font-size:20px;
+}
+.search-des-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.search-des-city{
+    font-size: 12px;
+}
+.footer{
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  left:0;
+  bottom: 0px;
+  width: 100%;
+  height: 100rpx;
+  background: #23cc70;
+  z-index: 999;
+  border-top: 1px solid #f2f3f8;
+  font-size: 14px;
+  color: #fff;
+}
+.licom{
+  width: 50%;
+  text-align: center;
+}
