@@ -212,6 +212,36 @@ Page({
       }
     });
   },
+  getOrderList() {
+    let that = this;
+    wx.request({
+      url:APIs.orderList,
+      data:{
+        sessionId:wx.getStorageSync('sessionId'),
+        loginKey: wx.getStorageSync('loginKey'),
+        d:{
+          pageNum:that.data.pageNum,
+          pageLimit:that.data.pageLimit
+        }
+      },
+      method:'GET',
+      success:function(res){
+        wx.hideToast();
+        if(!res.data.success) return;
+        if(res.data.success && res.data.data && res.data.data.length == 0){
+          that.setData({
+            isShowFail:true,
+            failText:'未登录'
+          });
+          wx.setStorageSync('sessionId','');
+          wx.setStorageSync('isLogin',false);
+          wx.setStorageSync('sessionKey','');
+          wx.setStorageSync('loginKey','');
+          return;
+        }
+      }
+    })
+  },
   bindLowerList:function(){
     this.setData({
       page:this.data.page+1
