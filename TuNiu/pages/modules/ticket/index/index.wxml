@@ -2,8 +2,8 @@
 <view>
 <!-- 顶部搜索部分 -->
   <view class='search-layout'>
-    <view class='des-city'>
-      <text class='des-city-text'>上海</text>
+    <view class='des-city' bindtap="bindShowCity">
+      <text class='des-city-txt'>{{header.city}}</text>
       <text class='des-city-dwn'></text>
     </view>
     <view class='search'>
@@ -15,39 +15,51 @@
     </view> 
   </view>
   <!-- 主体列表部分 -->
-  <scroll-view class='scroll-view' style='height:{{listHeight}}px;'>
+  <scroll-view class='scroll-view' scroll-y="true" bindscrolltolower="bindLowerList" style='height:{{listHeight}}px;'>
     <view class='scroll-container'>
-      <view class='scroll-li'>
-        <image class='scroll-img' src='' mode='scaleToFill'></image>
+      <view class='scroll-li' wx:for="{{list}}" wx:for-item="item" wx:key="productId" bindTap="navToDetail" data-productid="{{item.productId}}">
+        <image class='scroll-img' src='{{item.image}}' mode='scaleToFill'></image>
         <view class='scroll-des'>
           <view class='scenic-title ellips'>
-            <text>上海迪士尼乐园</text>
+            <text>{{item.name}}</text>
           </view>
           <view class='search-des-middle'>
             <view class="search-des-wrapper">
               <view class='sch-lables'>
-                <text class="search-des-lable">今日可订</text>
+                <block wx:if="{{item.canBookNow}}">
+                  <text class="search-des-lable">今日可订</text>
+                </block>
+                <block wx:if="{{false}}">
+                  <text class='search-des-lable' wx:for="{{item.labelImgListNew}}" wx:key="sale" wx:for-item="sale">
+                    {{sale.labelText=="返"?"返现":sale.labelText}}
+                  </text>
+                  <block wx:if="{{item.isPromotion}}">
+                    <text class='search-des-lable'>优惠</text>
+                  </block>
+                </block>
+                
               </view>
               <view class='search-des-comt'>
-                <text>1.7万人点评</text>
-                <text class='search-des-sat'>98%</text>
+                <text>{{item.countDesc}}</text>
+                <text class='search-des-sat'>{{item.satisfaction}}%</text>
                 <text>满意</text>
               </view> 
             </view>
             <view class='search-des-price'>
               <text class="search-des-symbol">¥</text>
-              <text class="search-des-amount">500</text>
+              <text class="search-des-amount">{{item.salePrice}}</text>
               <text>起</text>
             </view>       
           </view>
           <view class='search-des-footer'>
             <view class='search-des-city gray-color'>
-              <text>上海</text>
+              <text>{{item.poiCityName}}</text>
             </view>
           </view>  
         </view>  
       </view> 
     </view>
+    <view class="bottom-loading"> {{loadText}} </view>
   </scroll-view>
   <!-- 页面底部 -->
   <view class='footer'>

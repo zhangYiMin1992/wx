@@ -4,7 +4,7 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#23cc77",
+    "navigationBarBackgroundColor": "#e88338",
     "navigationBarTitleText": "景点门票",
     "navigationBarTextStyle":"white",
     "enablePullDownRefresh":false
