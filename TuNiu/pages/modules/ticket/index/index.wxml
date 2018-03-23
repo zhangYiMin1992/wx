@@ -1,6 +1,6 @@
-<!--pages/modules/ticket/index/index.wxml-->
-<view>
-<!-- 顶部搜索部分 -->
+
+<view hidden='{{tabIndex!=1}}'>
+  <!-- 顶部搜索部分 -->
   <view class='search-layout'>
     <view class='des-city' bindtap="bindShowCity">
       <text class='des-city-txt'>{{header.city}}</text>
@@ -14,7 +14,7 @@
       </view>
     </view> 
   </view>
-  <!-- 主体列表部分 -->
+  <!-- 列表部分 -->
   <scroll-view class='scroll-view' scroll-y="true" bindscrolltolower="bindLowerList" style='height:{{listHeight}}px;'>
     <view class='scroll-container'>
       <view class='scroll-li' wx:for="{{list}}" wx:for-item="item" wx:key="productId" bindTap="navToDetail" data-productid="{{item.productId}}">
@@ -61,13 +61,19 @@
     </view>
     <view class="bottom-loading"> {{loadText}} </view>
   </scroll-view>
-  <!-- 页面底部 -->
-  <view class='footer'>
+</view>
+
+<!-- 订单页面 -->
+<view hidden='{{tabIndex!=2}}'>
+  <text>订单列表页面</text>
+</view>
+
+ <!-- 页面底部table -->
+<view class='footer'>
     <view class='licom'>
       <text>景点门票</text>
     </view>
-    <view class='licom'>
+    <view class='licom' bindtap="bindtapOrderList">
       <text>我的订单</text>
     </view>
-  </view>
 </view>

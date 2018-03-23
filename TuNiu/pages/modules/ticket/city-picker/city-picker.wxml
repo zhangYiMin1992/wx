@@ -1,0 +1,40 @@
+<import src="../template/search-header/search-header.wxml"/>
+<view class="city-picker" hidden="{{!showCur}}">
+    <view class="city-wrapper">
+        <!-- 头部 -->
+        <template is="header" data='{{header}}'/>
+        <!-- 搜索列表 -->
+        <view class="search-list" hidden="{{!header.isShowSch}}">
+            <view class="letter-city-list">
+                <view class="letter-name" wx:for="{{searchResultCities}}" wx:key="name" wx:for-item="city" bindtap="bindSelectCity" data-city="{{city}}">
+                    <text>{{city.name}}</text>
+                </view>
+            </view>
+        </view>
+        <!-- 默认打开页面-->
+        <view class="city-box" hidden="{{header.isShowSch}}">
+            <scroll-view scroll-y="true" style="height:{{cityListHeight}}px" class="city-list" scroll-into-view="{{cid}}">
+                <view class="nav-container" id="定位">
+                    <view class="nav-tabs {{currentTab==1 ? 'nav-tabs-selected' : ''}}">
+                        <view class="nav-tab {{currentTab==0 ? 'nav-tab-active' :''}}" bindtap="tabChange" data-current="0">
+                            <text>境内</text>    
+                        </view>
+                        <view class="nav-tab {{currentTab==1 ? 'nav-tab-active' :''}}" bindtap="tabChange" data-current="1">
+                            <text>境外</text>    
+                        </view>
+                    </view>
+                </view>
+                <view class="city-section">
+                    <view class="city-des-title">
+                        <text>定位城市</text>
+                    </view>
+                    <view class="text-container">
+                        <view class="text-item" bindtap="bindSelectCity" data-city="{{geoCity}}">
+                            <text>{{geoCity.name}}</text>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

@@ -1,8 +1,28 @@
 <template name="header">
   <view class='search-layout'>
-    <view class='des-city'>
-      <text>上海</text>
-      <text></text>
+    <view class='des-city' bindtap="bindShowCity" wx:if="{{header.name=='index'}}">
+      <text class="des-city-txt">{{header.city}}</text>
+      <text class="des-city-dwn"></text>
     </view>
+    <view class="search">
+        <icon type="search" class="search-icon" size="16"></icon>
+        <block wx:if="{{header.name=='index'}}">
+            <view class="sch-v">
+                <input class="search-input" placeholder="搜索目的地/主题/关键字" placeholder-style="color:#ccc;line-height:60rpx;" value="{{header.des}}"/>
+                <view bindtap="navSearchPanel"></view>
+            </view>
+        </block>
+        <block wx:elif="{{header.name=='search-panel'}}">
+            <input class="search-input" placeholder="搜素目的地/主题/关键字" placeholder-style="color:#ccc; line-height:60rpx;" bindinput="bindKeyInput" focus="{{header.focus}}" value="{{header.schVal}}" bindconfirm="search"/>
+        </block>
+        
+        <block wx:else>
+            <input class="search-input" placeholder="请输入城市名称或者拼音" placeholder-style="color:#ccc;line-height:60rpx;" bindinput="bindKeyInput" value="{{header.schVal}}"/>
+        </block>
+        <icon type="clear" size='18' class="clear-icon" wx:if="{{(header.name=='city-picker' && header.isShoeSch) || header.name == 'search-panel'}}" bindtap="bindInputClear"/> 
+    </view>  
+    <view class="cancel-search" wx:if="{{header.name=='search-panel' || header.name=='city-picker'}}" bindtap="bindBackIndex">
+        取消
+    </view> 
   </view>
 </template>

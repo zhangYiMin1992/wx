@@ -1,4 +1,6 @@
 import {httpsProtocol,cityLthLimit} from'../utils/helper';
+import { userLoginEvent } from '../utils/login-actions.js';
+import { go2Page } from '../utils/nav';
 import cache from '../utils/cache';
 import config from '../appConfig';
 const SELECTED_CITY='TICKET_SELECTED_CITY';
@@ -91,7 +93,7 @@ Page({
   },
   bindShowCity:function(){
     cache.store.put('index',{isrender:0});
-    ge2Page({url:'../city-picker/city-picker'});
+    go2Page({url:'../city-picker/city-picker'});
   },
   getPageData:function(){
     let self = this;
@@ -239,8 +241,61 @@ Page({
           wx.setStorageSync('loginKey','');
           return;
         }
+        let ol = res.data.orderList;
+        let olLength = res.data.orderList.length;
+        if((ol && olLength < that.data.pageLimit) || (ol && ol.length == 0 && that.data.pageNum > 1)){
+          that.setData({pageEnd:true });
+        }
+        that.setData({
+          orderList:that.data.orderList.concat(res.data.orderList),
+          pageNum:that.data.pageNum + 1
+        });
+        if(that.data.orderList.length == 0){
+          that.setData({
+            isShowFail:true,
+            failText:'您还没有提交订单哦~'
+          });
+        }
+      },
+      fail:function(){
+        wx.hideToast();
+        that.setData({
+          isShowFail:true,
+          failText:'您的网络断开，请重新连接',
+          orderList:[],
+          pageEnd:false,
+          pageNum:1
+        });
       }
     })
+  },
+  bindtapOrderList(){
+    let url='../index/index';
+    let self=this;
+    wx.setStorageSync('pageTo',url);
+    wx.setStorageSync('pageToFlag','index');
+    let isLogin = wx.getStorageSync('isLogin');
+    if(isLogin){
+      this.setData({
+        tabIndex:2,
+        isShowFail:false
+      });
+      self.data.pageNum ==1 && self.getOrderList();
+      return;
+    }
+    wx.showToast({
+      title:'加载中',
+      icon:'loading',
+      duration:10000,
+      mask:true
+    })
+    userLoginEvent(function(){
+      self.setData({
+        tabIndex:2
+      });
+      wx.hideToast();
+      self.getOrderList();
+    });
   },
   bindLowerList:function(){
     this.setData({

@@ -1,6 +1,10 @@
 {
   "pages":[
-    "pages/modules/ticket/index/index"
+    "pages/modules/ticket/city-picker/city-picker",
+    "pages/modules/ticket/index/index",
+    "pages/modules/ticket/login/login"
+    
+            
   ],
   "window":{
     "backgroundTextStyle":"light",
