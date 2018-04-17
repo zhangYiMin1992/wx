@@ -1,0 +1,155 @@
+<scroll-view scroll-y="true" class="container" style="height:{{windowHeight}}" bindscrolltolower='lower'>
+  <view class="banner" bindtap="viewPhoto" data-images="{{bannerImages}}" data-type="banner">
+      <image class="banner-img" src="{{scenicInfo.defaultImg}}" mode="widthFix"/>
+      <view class="footer-info">
+        <view class="scenic-name"><text>上海迪士尼</text></view>
+        <view class="icon-down4"></view>
+        <view class="photo-info">
+          <text class="photo-num">共21张</text>
+        </view>
+      </view>
+  </view>
+  <view>
+    <view class="info-row address">
+      <view class="info-cell">
+        <image class="image-icon" src="../styles/images/destination.png"></image>
+        <text class="cell-text">上海市浦东新区川沙新镇申迪北路753号上海迪士尼</text>
+      </view>
+    </view> 
+    <view class="info-row opentime">
+      <view class="info-cell">
+        <image class="image-icon" src="../styles/images/time2.png"></image>
+        <text class="cell-text">开放时间:9:00-19:00 ( 开放时间以当天公示为准，</text>
+        <view class="arrow-right"></view>
+      </view>
+    </view>
+  </view>
+  <view class="tabs-box">
+    <view class="tabs">
+      <view class="tab tab-active">购票</view>
+      <view class="tab">景点介绍</view>
+      <view class="tab">点评</view>
+    </view>
+    <view hidden='true'>
+      <!-- 购票列表部分 -->
+      <view>
+        <!-- <view class='no-content' wx:if="{{!scenicInfo.tickets || !scenicInfo.tickets.length}}">暂无门票</view> -->
+        <view class='ticket-group'>
+          <view class='ticket-type-name'>
+            <image class='image-icon' src="../styles/images/ticket3.png" mode="aspectFit"></image>
+            <text class='ticket-type-text'>门票</text>
+          </view>
+          <!-- 门票列表 -->
+          <view class='ticket-list'>
+            <view class='ticket-item'>
+              <view class='ticket-info'>
+                <view class='basic-info'>
+                  <view class="ticket-name">
+                    <text>上海上海上海迪士尼乐园80元单人餐饮套餐代金券门票</text>
+                  </view>
+                  <view class="advance-book-time">
+                    <text>提前1天23点前可预订门票</text>
+                  </view>
+                  <view class='promo-info'>
+                    <text>不可退</text>
+                  </view>
+                  <view class='ticket-type-link arrow-right-green'>
+                    <text>票种说明</text>
+                  </view>
+                </view>
+                <view class="price-info">
+                  <view class="promo-price-box">
+                    <text>￥<text class="promo-price">95</text>起</text>
+                  </view>
+                  <view class="lowest-price-box">
+                  <text>¥80</text></view>
+                  <view class='book-btn'>
+                    <view class='book-tip'>预订</view>
+                    <view class='online-pay'>
+                      <text>网上支付</text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class='ticket-knows-tip-box'>
+            <view class='ticket-knows-tip-title'>
+              <image class='image-icon' src="../styles/images/tip.png" mode='aspectFit'></image>
+              <text class='ticket-type-text'>景点须知</text>
+            </view>
+            <view class='konws-roder-tip'>
+              <text>预订提醒</text>
+            </view>
+            <view class='time-remind'>
+              <view class='first-content'>11:00-21:00上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼</view>
+              <view class='arrow-right'></view>
+            </view>
+            
+          </view> 
+        </view>
+        <view class='nearby-scenic'>
+        </view>
+      </view>
+      <!-- 景点介绍部分 -->
+      <view></view>
+      <!-- 点评部分 -->
+      <view></view>
+    </view>
+    <!-- 景点介绍部分 -->
+    <view class='intro-box' hidden='true'>
+      <!-- <view class='no-content' wx:if="{{!introInfo || !introInfo.length}}">暂无介绍</view> -->
+      <view class='intro-list'>
+        <view class="intro-item">
+          <text>11:00-21:00上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼</text>
+          <image class="intro-img" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 点评部分 -->
+    <view scroll-y="true" class='remark-box'>
+      <view class='no-content' hidden='true'>暂无点评</view>
+      <view class='remark-summary'>
+        <text>总体满意度<text class='satisfaction'>90%</text></text>
+        <text class='remark-count-box'>共<text class='remark-count'>45665</text>人点评</text>
+      </view>
+      <view class="remark-item">
+        <view class="user-info">
+          <view class='user-img-box'>
+            <image src="" class='user-img' mode='widthFix'></image>
+          </view>
+          <view class='user-cell'>
+            <text class='user-name'>我是路人甲</text>
+            <text class='remark-time'>2018-4-02</text>
+          </view>
+          <view class='attitude'>
+            <block>
+              <view class='image-icon'>
+                <image class='image-icon remark-star' src="../styles/images/star2.png" mode="widthFix"></image>
+                <!-- <image class='image-icon remark-star' src="../styles/images/star3.png" mode="widthFix"></image> -->
+              </view>
+            </block>
+          </view>
+        </view>
+        <view class="remark-content">
+          <text>11:00-21:00上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼11:00-21:00上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼上海市浦东新区川沙新镇申迪北路753号上海迪士尼</text>
+        </view>
+        <view class="photo-list">
+          <view class='photo-item'>
+            <view class='photo-box'>
+              <image src="" mode="widthFix" class='photo'></image>
+              <view class='photo-info'>
+                <text class='photo-num'>共5张</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="travel-type"><text>独自出游</text></view>
+      </view>
+      <view class="is-loading">{{pageEnd ? '亲,已经加载完啦~':'正在加载中...'}}</view>
+    </view>
+  </view>
+  <view class='ticket-knows'>
+    
+  </view>
+</scroll-view>

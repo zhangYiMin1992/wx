@@ -1,16 +1,16 @@
 {
-  "pages":[
-    "pages/modules/ticket/city-picker/city-picker",
+  "pages": [
+    "pages/modules/ticket/detail/detail",
     "pages/modules/ticket/index/index",
-    "pages/modules/ticket/login/login"
-    
-            
+    "pages/modules/ticket/city-picker/city-picker",
+    "pages/modules/ticket/login/login",
+    "pages/modules/ticket/template/ticket-knows/ticket-knows"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#e88338",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#23cc77",
     "navigationBarTitleText": "景点门票",
-    "navigationBarTextStyle":"white",
-    "enablePullDownRefresh":false
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
   }
 }

@@ -1,0 +1,350 @@
+page{
+  background-color: #f2f3f8;
+}
+.container{
+    width:100%;
+}
+.banner{
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    position: relative;
+    overflow: hidden;
+    background: pink;
+}
+.banner-img{
+    width: 100%;
+    display: block;
+    height: 370rpx;
+}
+.footer-info{
+    width: 100%;
+    height: 50rpx;
+    background: linear-gradient(transparent,rgba(0,0,0,.5));
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    line-height: 50rpx;
+}
+.scenic-name{
+  color: #fff;
+  font-size:28rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  position: absolute;
+  left:20rpx;
+  bottom:0;
+}
+.icon-down4{
+
+}
+.photo-info{
+  position: absolute;
+  right: 0;
+  bottom:0;
+  color:#fff;
+  height: 0;
+  padding:0 10rpx;
+  font-size:24rpx;line-height: 40rpx;
+  text-align: center;
+  border-bottom:40rpx solid #23cc77;
+  border-left:20rpx solid transparent;
+}
+.info-row{
+    width: 100%;
+    height: 90rpx;
+    background-color: #fff;
+    font-size: 28rpx;
+    line-height: 90rpx;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #ccc;   
+    padding:0 30rpx;
+    box-sizing: border-box;
+}
+.info-cell{
+    display: flex;
+    flex-direction: row;
+    align-items: center;   
+}
+.image-icon{
+  width:30rpx;
+  height: 30rpx;
+}
+.cell-text{
+  flex:1;
+  height: 90rpx;
+  margin-left:10rpx;
+}
+.arrow-right{
+  width: 15rpx;
+  height: 15rpx;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  transform: rotate(-45deg);
+}
+.tabs-box{
+  width:100%;
+  margin-top:20rpx;
+}
+.tabs{
+  width:100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  line-height: 90rpx;
+  text-align: center;
+  border-bottom: 1px solid #e8e8e8;
+  background-color:#fff;
+}
+.tab{
+  flex: 1;
+  font-size:28rpx;
+}
+.tab-active{
+  border-bottom: 2px solid #23cc77;
+  color: #23cc77;
+}
+.ticket-group{
+  
+  
+}
+.ticket-type-name{
+  font-size: 24rpx;
+  padding:0 30rpx;
+  width:100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1px solid #ccc;
+  background-color:#fafafa;
+}
+.ticket-type-text{
+  margin-left: 10rpx;
+  font-size: 28rpx;
+}
+.ticket-list{
+  padding:0 30rpx;
+  background-color:#fff;
+}
+.ticket-item{
+  padding:20rpx 0;
+  font-size: 24rpx;
+  border-bottom: 1px solid #ccc;
+}
+.ticket-info{
+  display: flex;
+  flex-direction: row;
+}
+.basic-info{
+  flex:1;
+  margin-right: 30rpx;
+}
+.ticket-name{
+  font-size:28rpx;
+  
+}
+.advance-book-time{
+  color:#ff8800;
+  margin:16rpx 0 8rpx 0;
+}
+.promo-info{
+  display: inline-block;
+  color:#23cc77;
+  padding:6rpx 6rpx;
+  border: 1px solid #23cc77;
+  border-radius:4rpx;
+  margin-bottom: 20rpx;
+}
+.ticket-type-link{
+  color:#23cc77;
+  font-size: 28rpx;
+}
+.arrow-right-green:after{
+  content: "";
+  width:15rpx;
+  height: 15rpx;
+  border-right: 1px solid #23cc77;
+  border-bottom: 1px solid #23cc77;
+  transform: rotate(-45deg);
+  display: inline-block;
+}
+.price-info{
+  max-width: 60px;
+  position: relative;
+}
+.promo-price-box{
+  color: #ff8800;
+  font-size: 26rpx;
+}
+.promo-price{
+  color:#ff5500;
+  font-size: 28rpx;
+}
+.lowest-price-box{
+  color: #ccc;
+  text-align: right;
+  text-decoration: line-through;
+}
+.book-btn{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 1px solid #ff8800;
+  border-radius: 8rpx;
+  width: 100rpx;
+  text-align: center;
+}
+.book-tip{
+  color: #fff;
+  font-size: 24rpx; 
+  background-color: #ff8800;
+  width:100%;
+  line-height: 40rpx;
+  height: 40rpx;
+}
+.online-pay{
+  width: 100%;
+  height: 30rpx;
+  font-size: 20rpx;
+  color: #ff8800;
+  line-height: 30rpx;
+}
+.ticket-knows-tip-box{
+  padding: 0 30rpx;
+  margin-top: 30rpx;
+  background-color:#fff;
+  box-sizing: border-box; 
+}
+.ticket-type-text{
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.konws-roder-tip{
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+.time-remind{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  margin-bottom: 20rpx;
+  padding-bottom: 30rpx;
+}
+.first-content{
+  color: #666666;
+  font-size: 28rpx;
+  flex:1;
+  line-height: 36rpx;
+  word-break: break-all;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  margin-right: 20rpx;
+}
+.intro-list{
+  padding: 30rpx;
+}
+.intro-item{
+  font-size: 28rpx;
+  color: #848484;
+  line-height: 48rpx;
+  text-align: justify;
+}
+.intro-img{
+  width: 100%;
+  background-color:antiquewhite;
+}
+.remark-box{
+  background: #fff;
+  font-size: 28rpx;
+}
+.remark-summary{
+  width:100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+  padding: 0 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #fff;
+}
+.satisfaction{
+  color: #ff8800;
+}
+.remark-count{
+  color:#ff8800;
+}
+.remark-item{
+  border-bottom: 1px solid #ccc;
+  padding: 30rpx;
+}
+.user-info{
+  display: flex;
+  width:100%;
+}
+.user-img-box{
+  width:70rpx;
+
+  margin-right: 5px;
+}
+.user-img{
+  background:pink;
+  width: 70rpx;
+  height: 70rpx;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.user-cell{
+  display: flex;
+  flex:1;
+  flex-direction: column;
+}
+.remark-time{
+  color:#ccc;
+  margin-top: 10rpx;
+}
+.attitude{
+  width: 120rpx;
+  text-align: right;
+  display: flex;
+  flex-direction: row
+}
+.remark-content{
+  padding: 30rpx 0;
+  line-height: 40rpx;
+  text-align: justify;
+}
+.photo-list{
+  display: flex;
+  margin-right: -10rpx;
+  flex-direction: row;
+}
+.photo-item{
+  width: 25%;
+  padding-right: 10rpx;
+  box-sizing: border-box;
+}
+.photo-box{
+  width:100%;
+  position: relative;
+  overflow: hidden;
+}
+.photo{
+  width: 100%;
+  height: 83px;
+  background: pink;
+}
+.travel-type{
+  color: #23cc77;
+  margin-top: 20rpx;
+}
+.is-loading{
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+}

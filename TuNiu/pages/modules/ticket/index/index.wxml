@@ -17,7 +17,7 @@
   <!-- 列表部分 -->
   <scroll-view class='scroll-view' scroll-y="true" bindscrolltolower="bindLowerList" style='height:{{listHeight}}px;'>
     <view class='scroll-container'>
-      <view class='scroll-li' wx:for="{{list}}" wx:for-item="item" wx:key="productId" bindTap="navToDetail" data-productid="{{item.productId}}">
+      <view class='scroll-li' wx:for="{{list}}" wx:for-item="item" wx:key="productId" bindtap="navToDetail" data-productid="{{item.productId}}">
         <image class='scroll-img' src='{{item.image}}' mode='scaleToFill'></image>
         <view class='scroll-des'>
           <view class='scenic-title ellips'>

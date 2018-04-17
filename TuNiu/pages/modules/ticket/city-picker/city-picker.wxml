@@ -34,7 +34,75 @@
                         </view>
                     </view>
                 </view>
+                <view class='city-section' wx:if="{{historyCities && historyCities.length>0}}">  
+                    <view class='city-des-title'>
+                        <text>选择历史</text>
+                    </view>
+                    <view class='text-container'>
+                        <view class="text-item {{idx==0 ? 'text-item-selected' : ''}}" wx:for="{{historyCities}}" wx:key="{{name}}" wx:for-item="city" wx:for-index="idx" bindtap="bindSelectCity" data-city="{{city}}">
+                            <text>{{city.name}}</text> 
+                        </view>
+                    </view>
+                </view>
+                <view id="tab-panel1" hidden="{{currentTab==0 ? false :true}}">
+                    <view class='city-section' id='热门'>
+                        <view class='city-des-title'>
+                            <text>热门推荐</text>
+                        </view>
+                        <view class='text-container'>
+                            <view class='text-item' wx:for="{{popularCity}}" wx:key="name" wx:for-item="city" bindtap="bindSelectCity" data-city="{{city}}">
+                                <text>{{city.name}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view id='{{item.letter}}' class='location-title letter-list' wx:for="{{citiesByLetters}}" wx:key="letter" wx:for-item="item">
+                        <view class='city-des-title'>
+                            <text>{{item.letter}}</text>
+                        </view>
+                        <view class='letter-city-list'>
+                            <view class='letter-name' wx:for="{{item.cities}}" wx:key="name" wx:for-item="city" bindtap="bindSelectCity" data-city="{{city}}">
+                                <text>{{city.name}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view id="tab-panel2" hidden='{{currentTab==1 ? false : true}}'>
+                    <view class='city-section' id="os热门">
+                        <view class='city-des-title'>
+                            <text>热门推荐</text>
+                        </view>
+                        <view class='text-container'>
+                            <view class='text-item' wx:for="{{popularCityOversea}}" wx:key="name" wx:for-item="city" bindtap='bindSelectCity' data-city="{{city}}">
+                                <text>{{city.name}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view id="os{{item.letter}}" class='location-title letter-list' wx:for="{{citiesByLettersOversea}}" wx:key="letter" wx:for-item="item">
+                        <view class='city-des-title'>
+                            <text>{{item.letter}}</text>
+                        </view>
+                        <view class='letter-city-list'>
+                            <view class='letter-name' wx:for="{{item.cities}}" wx:key="name" wx:for-item="city" bindtap='bindSelectCity' data-city="{{city}}">
+                                <text>{{city.name}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
             </scroll-view>
+            <!-- 定位热门 -->
+            <view>
+                <view class='indexer' hidden="{{currentTab==0 ? false : true}}">
+                    <view class='indexer-li' wx:for="{{indexer}}" wx:for-item="item" wx:key="item" bindtap="bindAnchorIndex"  data-item="{{item}}">
+                        <text>{{item}}</text>
+                    </view>
+                </view>
+                <view class="indexer" hidden="{{currentTab==1 ? false : true}}">
+                    <view class="indexer-li" wx:for="{{indexerOversea}}" wx:for-item="item" bindtap="bindAnchorIndex" data-item="{{item}}" wx:key="item" wx:for-index="idx" data-os="{{idx==0?'':'os'}}">
+                        <text>{{item}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class='indexer-show' hidden="{{!isLetterShow}}">{{currentLetter}}</view>
         </view>
     </view>
 </view>

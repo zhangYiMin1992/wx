@@ -10,7 +10,6 @@ const SELECTED_DES='TICKET_SELECTED_EDS';
 const EXPIRED = 3*60*60*1000;
 let lockPay=false;
 let isReject=false;
-
 let APIs=config.APIs;
 const PAGE_SIZE=10;
 
@@ -302,7 +301,13 @@ Page({
       page:this.data.page+1
     });
     this.getPageData();
+  },
+  navToDetail:function(e){
+    console.log(2)
+    let scenicId = e.currentTarget.dataset.productid;
+    cache.store.put('index',{isrender:0});
+    go2Page({
+      url:"../detail/detail?scenicId="+scenicId
+    });
   }
-
-  
 })
